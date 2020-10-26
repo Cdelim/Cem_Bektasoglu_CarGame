@@ -63,12 +63,12 @@ public class CarController : MonoBehaviour
 
         /*if (Input.GetKey(KeyCode.A))
         {
-            currentCar.transform.Rotate(0.0f, 0.0f, 5.0f, Space.Self);
+            currentCar.transform.Rotate(0.0f, 0.0f, 100.0f*Time.deltaTime, Space.Self);
             Debug.Log("Left Click");
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            currentCar.transform.Rotate(0.0f, 0.0f, -5.0f, Space.Self);
+            currentCar.transform.Rotate(0.0f, 0.0f, -100.0f*Time.deltaTime, Space.Self);
             Debug.Log("Right click");
         }*/
         if (currentCarIns.isExit)
@@ -103,12 +103,12 @@ public class CarController : MonoBehaviour
             var touch = Input.GetTouch(0);
             if (touch.position.x < Screen.width / 2)
             {
-                currentCar.transform.Rotate(0.0f, 0.0f, 5.0f*Time.deltaTime, Space.Self);
+                currentCar.transform.Rotate(0.0f, 0.0f, 100.0f*Time.deltaTime, Space.Self);
                 Debug.Log("Left click");
             }
             else if (touch.position.x > Screen.width / 2)
             {
-                currentCar.transform.Rotate(0.0f, 0.0f, -5.0f*Time.deltaTime, Space.Self);
+                currentCar.transform.Rotate(0.0f, 0.0f, -100.0f*Time.deltaTime, Space.Self);
                 Debug.Log("Right click");
             }
         }
