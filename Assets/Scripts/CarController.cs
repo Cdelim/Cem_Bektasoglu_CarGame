@@ -33,7 +33,7 @@ public class CarController : MonoBehaviour
         exitPositions = pointData.exitPoints;
         
         numberOfCar =0;
-        currentCar = Instantiate(prefab, initialPositions[numberOfCar], Quaternion.identity);
+        currentCar = Instantiate(prefab, initialPositions[numberOfCar], prefab.transfrom.rotation);
         currentCarIns=currentCar.GetComponent<Car>();
         currentCarIns.setInitialPosition(initialPositions[numberOfCar]);
         currentCarIns.setExitPosition(exitPositions[numberOfCar]);
@@ -63,12 +63,12 @@ public class CarController : MonoBehaviour
 
         /*if (Input.GetKey(KeyCode.A))
         {
-            currentCar.transform.Rotate(0.0f, 0.0f, 100.0f*Time.deltaTime, Space.Self);
+            currentCar.transform.Rotate(0.0f, 0.0f, 100.0f*Time.deltaTime, Space.World);
             Debug.Log("Left Click");
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            currentCar.transform.Rotate(0.0f, 0.0f, -100.0f*Time.deltaTime, Space.Self);
+            currentCar.transform.Rotate(0.0f, 0.0f, -100.0f*Time.deltaTime, Space.World);
             Debug.Log("Right click");
         }*/
         if (currentCarIns.isExit)
@@ -84,7 +84,7 @@ public class CarController : MonoBehaviour
             {
                 carObj.goBegining();
             }
-            currentCar = Instantiate(prefab, initialPositions[this.numberOfCar], Quaternion.identity);
+            currentCar = Instantiate(prefab, initialPositions[this.numberOfCar], prefab.transfrom.rotation);
             currentCarIns = currentCar.GetComponent<Car>();
             currentCarIns.setInitialPosition(initialPositions[this.numberOfCar]);
             currentCarIns.setExitPosition(exitPositions[this.numberOfCar]);
@@ -103,12 +103,12 @@ public class CarController : MonoBehaviour
             var touch = Input.GetTouch(0);
             if (touch.position.x < Screen.width / 2)
             {
-                currentCar.transform.Rotate(0.0f, 0.0f, 100.0f*Time.deltaTime, Space.Self);
+                currentCar.transform.Rotate(0.0f, 0.0f, 100.0f*Time.deltaTime, Space.World);
                 Debug.Log("Left click");
             }
             else if (touch.position.x > Screen.width / 2)
             {
-                currentCar.transform.Rotate(0.0f, 0.0f, -100.0f*Time.deltaTime, Space.Self);
+                currentCar.transform.Rotate(0.0f, 0.0f, -100.0f*Time.deltaTime, Space.World);
                 Debug.Log("Right click");
             }
         }
