@@ -1,4 +1,3 @@
-# MobgeProject
 In the window tab, there is a custom editor called LevelCreator for Level Creation.
 # ----About Game----
 -There are 2 levels. Each level has own obstacles and entrance-exit points setup.  
